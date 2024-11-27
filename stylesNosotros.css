@@ -1,0 +1,331 @@
+/* {
+  padding: 0;
+  border: 0;
+  margin: 0;
+}*/
+body {
+  padding: 0;
+  border: 0;
+  margin: 0;
+  justify-content: center;
+  background-color: rgb(6, 6, 6);
+  font-family: Georgia;
+}
+ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  text-decoration: none;
+  list-style-type: none;
+  padding: 0;
+  background-color: black;
+  margin-bottom: 10px;
+}
+
+.lista {
+  margin-top: 25px;
+  color: #ffffff;
+  font-size: 17px;
+  text-align: center;
+  font-family: Georgia;
+}
+
+.contenedor_listas {
+  border-bottom: 1px solid rgb(51, 51, 51);
+}
+
+.logo {
+  margin-top: 15px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid rgb(214, 214, 214);
+}
+
+.input {
+  border-radius: 15px;
+  height: 35px;
+  background-color: #ffffff;
+  margin-top: 15px;
+}
+
+a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+button {
+  background-color: #ffffff;
+  margin-top: 10px;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+.miHeader h1 {
+  color: #ebf5f7;
+  text-align: center;
+  display: block;
+  z-index: 1; /* Asegura que el texto esté encima del fondo */
+  margin: 80px 0 0 0;
+}
+
+.miHeader {
+  height: 300px;
+  color: white;
+  text-align: center;
+  display: block;
+  align-items: center;
+  justify-content: center;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.miHeader::before {
+  content: "";
+  position: absolute;
+  top: 20px;
+  left: 0;
+  width: 100%;
+  height: 120%;
+  background-image: url("images/banner-nosotros.jpg");
+  background-size: contain;
+  background-position: top;
+  background-repeat: no-repeat;
+  opacity: 0.2; /* Ajusta este valor para la transparencia */
+  z-index: -1; /* Envía el fondo detrás del contenido del header */
+}
+
+.clearfix {
+  clear: both; /*para que los elementos que estan abajo se queden en su sitio */
+}
+
+footer {
+  background: black;
+  color: white;
+  text-align: center;
+  height: 50px;
+  line-height: 50px; /* Para centrar la linea del texto */
+}
+
+.card {
+  border-radius: 15px;
+
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  gap: 1rem;
+  backdrop-filter: blur(15px);
+  box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.192),
+    inset 0 0 5px rgba(255, 255, 255, 0.274), 0 5px 5px rgba(0, 0, 0, 0.164);
+  transition: 0.5s;
+}
+
+.card:hover {
+  animation: ease-out 5s;
+  background: rgba(173, 173, 173, 0.05);
+}
+
+.card ul {
+  padding: 4rem;
+  display: flex;
+  list-style: none;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.card ul li {
+  cursor: pointer;
+}
+
+.svg {
+  transition: all 0.3s;
+
+  /* if you find some problems change w - h : 30px*/
+  padding: 1rem;
+  height: 20px;
+  width: 20px;
+  border-radius: 100%;
+  color: #ffffff;
+  fill: currentColor;
+  box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.3),
+    inset 0 0 5px rgba(255, 255, 255, 0.5), 0 5px 5px rgba(0, 0, 0, 0.164);
+}
+
+.text {
+  opacity: 0;
+  border-radius: 5px;
+  padding: 5px;
+  transition: all 0.3s;
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.3);
+  position: absolute;
+  z-index: 9999;
+  box-shadow: -5px 0 1px rgba(153, 153, 153, 0.2),
+    -10px 0 1px rgba(153, 153, 153, 0.2),
+    inset 0 0 20px rgba(255, 255, 255, 0.3),
+    inset 0 0 5px rgba(255, 255, 255, 0.5), 0 5px 5px rgba(0, 0, 0, 0.082);
+}
+
+/*isometric prooyection*/
+.iso-pro {
+  transition: 0.5s;
+}
+.iso-pro:hover a > .svg {
+  transform: translate(15px, -15px);
+  border-radius: 100%;
+}
+
+.iso-pro:hover .text {
+  opacity: 1;
+  transform: translate(25px, -2px) skew(-5deg);
+}
+
+.iso-pro:hover .svg {
+  transform: translate(5px, -5px);
+}
+
+.iso-pro span {
+  opacity: 0;
+  position: absolute;
+  color: #1877f2;
+  border-color: #1877f2;
+  box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.3),
+    inset 0 0 5px rgba(255, 255, 255, 0.5), 0 5px 5px rgba(0, 0, 0, 0.164);
+  border-radius: 50%;
+  transition: all 0.3s;
+  height: 60px;
+  width: 60px;
+}
+
+.iso-pro:hover span {
+  opacity: 1;
+}
+
+.iso-pro:hover span:nth-child(1) {
+  opacity: 0.2;
+}
+
+.iso-pro:hover span:nth-child(2) {
+  opacity: 0.4;
+  transform: translate(5px, -5px);
+}
+
+.iso-pro:hover span:nth-child(3) {
+  opacity: 0.6;
+  transform: translate(10px, -10px);
+}
+
+.mision-vision {
+  background-color: #56381c;
+  color: white;
+  margin: 20px auto;
+  max-width: 1200px;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap; /* Permite que las columnas se envuelvan en líneas */
+  gap: 15px; /* Espacio entre las columnas */
+  clip-path: polygon(0 0, 100% 15%, 100% 85%, 0 100%);
+  box-sizing: border-box;
+}
+
+.icon-box {
+  flex: 1; /* Permite que las cajas se ajusten automáticamente */
+  min-width: 200px; /* Asegura un ancho mínimo para las cajas */
+  display: flex;
+  align-items: flex-start; /* Alinea los íconos y el texto en la parte superior */
+  justify-content: center;
+  padding: 10px;
+}
+.icon-box .mision {
+  margin-top: 15px;
+}
+.content-wrap-vision {
+  margin-top: 20px;
+}
+.content-wrap-valor {
+  margin-top: 50px;
+}
+.icon-box i {
+  margin-top: 35px;
+  font-size: 2em;
+  margin-right: 15px;
+  color: #f27f68;
+}
+
+.content-wrap {
+  max-width: 400px;
+}
+
+.box-content p {
+  margin-bottom: 10px;
+  color: #eeebe8;
+}
+
+h3 {
+  color: #e7b590;
+  margin-bottom: 30px;
+  margin-top: 10px;
+}
+
+@media (max-width: 200px) {
+  .icon-box {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .icon-box i {
+    margin-bottom: 10px;
+  }
+}
+.vent {
+  color: #ebf5f7;
+  text-align: center;
+}
+
+/* Seccion de la ventana emergente */
+#myCheckbox {
+  display: none;
+}
+label[for="myCheckbox"] {
+  cursor: pointer;
+  color: rgb(216, 146, 54);
+  text-decoration: underline;
+  text-align: center;
+}
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  z-index: 1000; /* Asegura que la ventana emergente esté siempre en frente*/
+  background-color: rgba(0, 0, 0, 0.4);
+}
+#myCheckbox:checked + .modal {
+  display: block;
+}
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.close:hover,
+.close:focus {
+  color: rgb(249, 243, 243);
+  text-decoration: none;
+}
