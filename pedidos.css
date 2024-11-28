@@ -1,0 +1,90 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    display: grid;
+   justify-content: center;
+    align-items: center;
+    height: 50vh;
+    margin: 0;
+}
+
+h1 {
+    text-align: center;
+}
+
+.contact-form {
+    display: flex;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    align-items: center;
+
+}
+option{
+    font-family: Arial, sans-serif;
+
+}
+
+.formulario {
+    padding: 20px;
+}
+
+.contact-form input,
+.contact-form textarea,
+.contact-form select,
+.contact-form .miTabla{
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.miTabla{
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.contact-form button {
+    background-color: #d17a16;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 10px;
+    margin-bottom: 20px;
+    align-items: center;
+}
+
+.contact-form button:hover {
+    background-color: #33b4e7;
+}
+
+table, th, td { 
+    border: 1px solid #ccc; 
+    border-collapse: collapse;
+    border-radius: 5px;
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+ }
+     th, td
+ { 
+    padding: 10px; text-align: left;
+ }
+ .contact-form .btnAgregar{
+    text-align: right;
+ }
+ .contact-form .btnEnviar{
+    text-align: center;
+ }
+ .contact-form form-group {
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px;
+ }

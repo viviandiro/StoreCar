@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="pedidos.css">
+    <title>FormularioPedidos</title>
+</head>
+
+<body>
+    <h1>Pedidos</h1>
+
+    <div class="contact-form">
+        <form class="formulario" id="formulario" onsubmit="guardarDatos(event)">
+            <div class="form-group">
+                <label for="tipoDocumento">Selecciona el tipo de documento:</label>
+                <br><br>
+                <select id="tipoDocumento">
+                    <option value="dni">Seleccione</option>
+                    <option value="dni">Cedula de Ciudadania</option>
+                    <option value="pasaporte">Nit</option>
+                    <option value="licencia">Pasaporte</option>
+                </select></div>
+            <div class="form-group">
+                <label for="id">Numero DNI:</label>
+                <input type="text" id="id" name="id" required>
+            </div>
+           <div>
+            <label for="name">Nombre cliente:</label>
+            <input type="text" id="name" name="name" required>
+           </div>
+            
+
+            <label for="email">Correo Electrónico:</label>
+            <input type="email" id="email" name="email" required>
+
+            
+            <table id="miTabla">
+                <thead>
+                    <tr>
+                        <th>Nombre del producto</th>
+                        <th>cantidad</th>
+                        <th>Valor total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td contenteditable="true"> </td>
+                        <td contenteditable="true"> </td>
+                        <td contenteditable="true"></td>
+                    </tr>
+                    </tbody>
+                   
+            </table>
+            <div class="btnAgregar">
+                <button  onclick="agregarFila()">Agregar Fila</button>
+            </div>
+            
+            <label for="message">Observaciones:</label>
+            <textarea id="message" name="message" rows="2" required></textarea>
+            <div class="btnEnviar">
+                <button type="submit">Enviar</button>
+            </div>
+           
+
+        </form>
+    </div>
+
+    <h3>Datos almacenados:</h3>
+    <div id="datosAlmacenados"></div>
+
+    <script src="pedidos.js"></script
+</body>
+</html>
