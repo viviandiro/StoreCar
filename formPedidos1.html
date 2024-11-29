@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="pedidos.css">
+    <title>FormularioPedidos</title>
+</head>
+
+<body>
+    <h1>Pedidos</h1>
+
+    <div class="contact-form">
+        <form class="formulario" id="formulario" onsubmit="guardarDatos(event)">
+            <div class="form-group">
+                <label for="tipoDocumento">Selecciona el tipo de documento:</label>
+                <br><br>
+                <select id="tipoDocumento">
+                    <option value="null">Seleccione</option>
+                    <option value="Cedula de Ciudadania">Cedula de Ciudadania</option>
+                    <option value="Nit">Nit</option>
+                    <option value="Pasaporte">Pasaporte</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="id">Numero DNI:</label>
+                <input type="text" id="id" name="id" required>
+            </div>
+            <div>
+                <label for="name">Nombre cliente:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+
+
+            <label for="email">Correo Electrónico:</label>
+            <input type="email" id="email" name="email" required>
+
+
+            <table id="miTabla">
+                <thead>
+                    <tr>
+                        <th>Nombre del producto</th>
+                        <th>cantidad</th>
+                        <th>Valor Unitario</th>
+                        <th>Precio</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td contenteditable="true" id="producto-0"></td>
+                        <td contenteditable="true" id="cantidad-0" oninput="calcularPrecio(0)"></td>
+                        <td contenteditable="true" id="valorUnitario-0" oninput="calcularPrecio(0)"></td>
+                        <td id="precio-0"></td>
+                    </tr>
+                
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="2"></td>
+                       
+                        <td>Total</td>
+                        <td id="valorTotal">0</td>
+                    </tr>
+                </tfoot>
+
+            </table>
+            <div class="btnAgregar">
+                <button onclick="agregarFila()">Agregar Fila</button>
+            </div>
+
+            <label for="message">Observaciones:</label>
+            <textarea id="message" name="message" rows="2" required></textarea>
+            <div class="btnEnviar">
+                <button type="submit">Enviar</button>
+            </div>
+
+
+        </form>
+    </div>
+
+    <h3>Datos Pedido</h3>
+    <div id="datosUsuario">
+        <div id="DatosCompra" > </div>
+    </div>
+    <script src="pedidos.js"></script
+</body>
+</html>
