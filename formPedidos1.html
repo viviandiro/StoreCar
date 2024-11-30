@@ -6,18 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="pedidos.css">
     <title>FormularioPedidos</title>
+
+
 </head>
 
 <body>
     <h1>Pedidos</h1>
 
     <div class="contact-form">
-        <form class="formulario" id="formulario" onsubmit="guardarDatos(event)">
+        <form class="formulario" id="formulario" onsubmit="guardarDatos(event);">
             <div class="form-group">
                 <label for="tipoDocumento">Selecciona el tipo de documento:</label>
                 <br><br>
                 <select id="tipoDocumento">
-                    <option value="null">Seleccione</option>
                     <option value="Cedula de Ciudadania">Cedula de Ciudadania</option>
                     <option value="Nit">Nit</option>
                     <option value="Pasaporte">Pasaporte</option>
@@ -48,19 +49,19 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td contenteditable="true" id="producto-0"></td>
-                        <td contenteditable="true" id="cantidad-0" oninput="calcularPrecio(0)"></td>
-                        <td contenteditable="true" id="valorUnitario-0" oninput="calcularPrecio(0)"></td>
-                        <td id="precio-0"></td>
+                        <td><input type="text" name="producto"></td>
+                        <td><input type="number" name="cantidad"
+                                oninput="validarNumero(this); actualizarValorProducto(this)"></td>
+                        <td><input type="number" name="valorUnitario"
+                                oninput="validarNumero(this); actualizarValorProducto(this)"></td>
+                        <td><input type="number" name="valorProducto" readonly></td>
                     </tr>
-                
+
                 </tbody>
                 <tfoot>
                     <tr>
-                        <td colspan="2"></td>
-                       
-                        <td>Total</td>
-                        <td id="valorTotal">0</td>
+                        <td colspan="3">Total Valor Producto:</td>
+                        <td><input type="number" id="totalValorProducto" readonly></td>
                     </tr>
                 </tfoot>
 
@@ -69,8 +70,10 @@
                 <button onclick="agregarFila()">Agregar Fila</button>
             </div>
 
-            <label for="message">Observaciones:</label>
-            <textarea id="message" name="message" rows="2" required></textarea>
+            <label for="mensage">Observaciones:</label>
+            <textarea name="message" id="message" rows="4" cols="50" required></textarea>
+
+
             <div class="btnEnviar">
                 <button type="submit">Enviar</button>
             </div>
@@ -79,10 +82,17 @@
         </form>
     </div>
 
-    <h3>Datos Pedido</h3>
-    <div id="datosUsuario">
-        <div id="DatosCompra" > </div>
-    </div>
-    <script src="pedidos.js"></script
+    <h3>Datos del Cliente</h3>
+    <div id="datosCliente"></div>
+    <h3>Datos del pedido</h3>
+    <div id="tablaPedido"></div>
+    <h3>Observaciones</h3>
+    <div id="mensajeObservacion"></div>
+
+    <!-- <script src="ejecutor.js"></script> -->
+    <script src="datoclientePedido.js"></script>
+    <!-- <script src="pedidos.js"></script> -->
+    <!-- <script src="observaPedido.js"></script> -->
 </body>
+
 </html>
